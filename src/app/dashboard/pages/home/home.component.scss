@@ -1,0 +1,13 @@
+ .Titulo {
+    font-size: 1.3rem;
+}
+
+.Cantidad {
+  font-size: 2rem;
+}
+
+.Grid{
+    gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
