@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { UsersComponent2 } from './users.component';
 import { SharedModule } from 'src/app/shared/shared.module';
@@ -8,8 +8,7 @@ import { AlumnosFormDialogComponent } from './components/alumnos-form-dialog/alu
 import { AlumnosTableComponent } from './components/alumnos-table/alumnos-table.component';
 import { ControlErrorMessagePipe } from 'src/app/shared/pipes/control-error-message.pipe';
 import { FullNamePipe } from 'src/app/shared/pipes/full-name.pipe';
-
-
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -23,8 +22,10 @@ import { FullNamePipe } from 'src/app/shared/pipes/full-name.pipe';
   imports: [
     CommonModule,
     SharedModule,
-    RouterModule    
+    RouterModule,
+    MatIconModule,    
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   exports: [
     UsersComponent2,
   ],

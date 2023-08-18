@@ -12,9 +12,6 @@ import { NavMenuComponent } from './layout/nav-menu/nav-menu.component';
 import { RouterModule } from '@angular/router';
 import { MatListModule } from '@angular/material/list';
 
-
-
-
 @NgModule({
   declarations: [
     DashboardComponent,
@@ -28,10 +25,9 @@ import { MatListModule } from '@angular/material/list';
     MatToolbarModule,
     MatIconModule,
     MatListModule,
-    HomeModule,
-    UsersModule,
     RouterModule,
     UsersModule,
+    HomeModule,
   ], 
   exports: [
     DashboardComponent

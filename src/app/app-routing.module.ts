@@ -3,7 +3,7 @@ import { ChildrenOutletContexts, RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AuthComponent } from './auth/auth.component';
 import { HomeComponent } from './dashboard/pages/home/home.component';
-import { AlumnosFormDialogComponent } from './dashboard/pages/alumnos/components/alumnos-form-dialog/alumnos-form-dialog.component';
+import { AlumnosTableComponent } from './dashboard/pages/alumnos/components/alumnos-table/alumnos-table.component';
 
 const routes: Routes = [
   {
@@ -16,7 +16,7 @@ const routes: Routes = [
       },
       {
         path: 'alumnos',
-        component: AlumnosFormDialogComponent
+        component: AlumnosTableComponent,
       }
     ],
   },

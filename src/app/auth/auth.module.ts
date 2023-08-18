@@ -5,6 +5,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { AuthComponent } from './auth.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { RouterModule } from '@angular/router';
+import { MatCardModule } from '@angular/material/card';
 
 
 
@@ -18,6 +19,7 @@ import { RouterModule } from '@angular/router';
     CommonModule,
     SharedModule,
     RouterModule,
+    MatCardModule,
   ]
 })
 export class AuthModule { }
