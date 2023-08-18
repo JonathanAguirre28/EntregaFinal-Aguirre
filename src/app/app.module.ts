@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DashboardModule } from './dashboard/dashboard.module';
 import {MatCardModule} from '@angular/material/card';
+import {MatListModule} from '@angular/material/list';
+
 
 
 @NgModule({
@@ -18,6 +19,8 @@ import {MatCardModule} from '@angular/material/card';
     DashboardModule,
     BrowserAnimationsModule,
     MatCardModule,
+    MatListModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

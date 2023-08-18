@@ -1,0 +1,64 @@
+<h1 mat-dialog-title class="Titulo">
+  {{ 
+  editingUser? 'Editando a ' + editingUser.name + ' ' + editingUser.surname 
+  : 'Creando Usuario'
+}}
+</h1>
+<div mat-dialog-content class="DivContenedor">
+  <form [formGroup]="userForm">
+
+
+    <div class="divNombres">
+      <div class="field">
+        <mat-form-field appearance="outline">
+          <mat-label>Nombre</mat-label>
+          <input formControlName="name" matInput type="text" name="name" />
+
+          <mat-error *ngFor="let error of nameControl.errors | keyvalue">
+            {{ error | controlErrorMessage }}
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="field">
+        <mat-form-field appearance="outline">
+          <mat-label>Apellido</mat-label>
+          <input formControlName="surname" matInput type="text" name="surname" />
+          <mat-error *ngFor="let error of surnameControl.errors | keyvalue">
+            {{ error | controlErrorMessage }}
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="divEmail">
+      <div class="field">
+        <mat-form-field appearance="outline">
+          <mat-label>Email</mat-label>
+          <input formControlName="email" matInput type="email" name="email" />
+          <mat-error *ngFor="let error of emailControl.errors | keyvalue">
+            {{ error | controlErrorMessage }}
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="field">
+        <mat-form-field appearance="outline">
+          <mat-label>Contraseña</mat-label>
+          <input formControlName="password" matInput type="password" name="password" />
+          <mat-error *ngFor="let error of passwordControl.errors | keyvalue">
+            {{ error | controlErrorMessage }}
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+  </form>
+
+  <!-- <pre> {{ userForm.value | json }} </pre> -->
+</div>
+<div class="divButton" mat-dialog-actions>
+  <button mat-button mat-dialog-close>Cancelar</button>
+  <button (click)="onSubmit()" type="submit" mat-button>Guardar</button>
+</div>
+
+

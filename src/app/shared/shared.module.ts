@@ -6,13 +6,29 @@ import { MatIconModule } from '@angular/material/icon';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatTableModule} from '@angular/material/table';
+import { RouterModule } from '@angular/router';
+import { FullNamePipe } from './pipes/full-name.pipe';
+import { ControlErrorMessagePipe } from './pipes/control-error-message.pipe';
+import { RepetirDirective } from './directives/repetir.directive';
+import { ResaltadoDirective } from './directives/resaltado.directive';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+
+  ],
   imports: [
-    CommonModule
+    CommonModule,
+    MatCardModule,
+    MatButtonModule,
+    MatIconModule,
+    ReactiveFormsModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatTableModule,
+    
   ],
   exports: [
     MatCardModule,
@@ -21,6 +37,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     ReactiveFormsModule,
     MatInputModule,
     MatFormFieldModule,
+    MatTableModule,
+    RouterModule,
   ]
 })
 export class SharedModule { }

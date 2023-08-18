@@ -1,7 +1,7 @@
 <mat-drawer-container class="example-container" autosize>
 <!-- SIDEBAR -->
     <mat-drawer #drawer class="example-sidenav" mode="side">
-  
+      <app-nav-menu></app-nav-menu>
     </mat-drawer>
   <!-- CONTENT WRAPPER -->
     <div class="example-sidenav-content">
@@ -16,8 +16,9 @@
           </mat-toolbar>
 
           <main>
-            <!-- <app-home></app-home> -->
-            <app-users></app-users>
+            <router-outlet></router-outlet>
+            <app-home></app-home>
+            <!-- <app-users2></app-users2> -->
           </main>
 
     </div>
