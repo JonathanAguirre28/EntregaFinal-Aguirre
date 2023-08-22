@@ -1,4 +1,4 @@
-import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -7,7 +7,8 @@ import { DashboardModule } from './dashboard/dashboard.module';
 import {MatCardModule} from '@angular/material/card';
 import {MatListModule} from '@angular/material/list';
 import { SharedModule } from './shared/shared.module';
-
+import { AuthModule } from './auth/auth.module';
+import { RouterOutlet } from '@angular/router';
 
 
 @NgModule({
@@ -22,9 +23,15 @@ import { SharedModule } from './shared/shared.module';
     MatCardModule,
     MatListModule,
     SharedModule,
+    AuthModule,
+    RouterOutlet,
   ],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  providers: [],
+  providers: [
+    {
+      provide: LOCALE_ID,
+      useValue: 'es-AR'
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

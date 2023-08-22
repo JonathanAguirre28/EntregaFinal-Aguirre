@@ -1,9 +1,13 @@
 import { NgModule } from '@angular/core';
-import { ChildrenOutletContexts, RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AuthComponent } from './auth/auth.component';
 import { HomeComponent } from './dashboard/pages/home/home.component';
-import { AlumnosTableComponent } from './dashboard/pages/alumnos/components/alumnos-table/alumnos-table.component';
+import { UserDetailComponent } from './dashboard/pages/alumnos/pages/user-detail/user-detail.component';
+import { UsersComponent } from './dashboard/pages/users/users.component';
+import { LoginComponent } from './auth/pages/login/login.component';
+import { RegisterComponent } from './auth/pages/register/register.component';
+
 
 const routes: Routes = [
   {
@@ -15,14 +19,48 @@ const routes: Routes = [
         component: HomeComponent
       },
       {
-        path: 'alumnos',
-        component: AlumnosTableComponent,
+        path:'users',
+        children: [
+          {
+            path: '',
+            component: UsersComponent,
+            data: {
+
+            }
+          },
+          {
+            path: ':id',
+            component: UserDetailComponent,
+            }
+        ]
+      },
+      {
+        path: 'users/:id',
+        component: UserDetailComponent,
+      },
+      {
+        path: '**',
+        redirectTo: 'home',
       }
     ],
   },
   {
     path: 'auth',
     component: AuthComponent,
+    children: [
+      {
+        path: 'login',
+        component: LoginComponent,
+      },
+      {
+        path: 'register',
+        component: RegisterComponent,
+      },
+      {
+        path: '**',
+        redirectTo: 'login',
+      }
+    ]
   },
   {
     path:'**',
